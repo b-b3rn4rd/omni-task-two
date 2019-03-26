@@ -1,0 +1,32 @@
+version: "3.4"
+services:
+  sut:
+    container_name: sut-${IMAGE_TAG}
+    image: alpine:latest
+    command: >
+      ash -c  "apk add --update curl && curl \
+        --fail \
+        --retry-connrefused \
+        --max-time 2 \
+        --retry 10 \
+        --retry-delay 0 \
+        --retry-max-time 40 \
+        http://app:8080/healthcheck"
+    networks:
+      - cicd
+  app:
+    container_name: app-${IMAGE_TAG}
+    image: bernard/omni-task-two:${IMAGE_TAG}
+    build:
+      dockerfile: Dockerfile
+      context: .
+      args:
+        IMAGE_TAG: ${IMAGE_TAG}
+        BUILD_SHA1: ${BUILD_SHA1}
+    networks:
+      - cicd
+    ports:
+      - "8080:8080"
+networks:
+  cicd:
+    driver: "bridge"
