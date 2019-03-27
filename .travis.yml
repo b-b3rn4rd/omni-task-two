@@ -14,3 +14,9 @@ before_install:
 
 script:
   - DOCKER_CONTENT_TRUST=1 BUILD_ID=$TRAVIS_BUILD_NUMBER BUILD_BRANCH=$TRAVIS_BRANCH make
+
+deploy:
+  provider: script
+  script: BUILD_ID=$TRAVIS_BUILD_NUMBER BUILD_BRANCH=$TRAVIS_BRANCH make latest
+  on:
+    branch: master
