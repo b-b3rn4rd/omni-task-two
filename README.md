@@ -17,18 +17,18 @@ It's a golang restful microservice using [go-restful](github.com/emicklei/go-res
 The microservice comes with a single resource that provides two endpoints
 `/healtcheck` and `/` running on port `8080`
 
-There is a simple unit test to check that the index page is returning `hello world`, additionally
-I'm also performing integration test using additional docker container.
+There is a simple unit test to check that the index page is returning `hello world`, 
+additionally, I'm also performing integration test using additional docker container.
 
 For the dependency management I'm using `go dep`, for linting `gometalinter`.
 
-The build specific variables for the `/healthcheck` page are passed using `ldflags`
+The build specific variables used for `/healthcheck` endpoint are passed using `ldflags`
 
 ### Docker
 The application is containerised using multistage build process.
-The build stage is installing dependencies, performs linting and builds the binary.
 
-The second stage copies binary from builder stage and runs it as unprivileged user
+* The build stage is installing dependencies, performs linting and builds the binary.
+* The final stage copies binary from the builder stage and runs it as unprivileged user
 
 I'm also using `docker-compose` to orchestrate image build and publish processes.
 
@@ -49,7 +49,10 @@ In order to organise pipeline workflow, I'm tagging docker images differently de
 **Dockerhub link: https://cloud.docker.com/repository/registry-1.docker.io/bernard/omni-task-two**
 
 ### Limitations
-Obviously there's a room to extend CI process with additional tools and processes such as:
+**The main limitation at the moment is the absence of `latest` tag. Unfortunately, `docker-compose`
+does not allow to push multiple tags to the dockerhub. The only option is use `docker tag` and tag image explicitly again when the build is on the master.**
+ 
+There's a room to extend CI process with additional tools and features such as:
 
 * sonarqube - to store test coverage reports and linting scores
 * integrate sonarqube with github or bitbucket for PRs

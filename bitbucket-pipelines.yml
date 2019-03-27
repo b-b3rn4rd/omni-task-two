@@ -10,12 +10,6 @@ pipelines:
           - DOCKER_CONTENT_TRUST=1 BUILD_ID=$BITBUCKET_BUILD_NUMBER make
         services:
           - docker
-  branches:
-    master:
-      script:
-        - echo "hell world"
-      services:
-        - docker
 definitions:
   services:
     docker:
