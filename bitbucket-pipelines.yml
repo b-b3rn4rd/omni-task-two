@@ -8,6 +8,7 @@ pipelines:
           - apt-get update && apt-get install -y python-pip
           - pip install --no-cache-dir docker-compose
           - DOCKER_CONTENT_TRUST=1 BUILD_ID=$BITBUCKET_BUILD_NUMBER make
-        services:
-          docker:
-            memory: 4096
+definitions:
+  services:
+    docker:
+      memory: 4096
