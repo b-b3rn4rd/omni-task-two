@@ -9,4 +9,5 @@ pipelines:
           - pip install --no-cache-dir docker-compose
           - DOCKER_CONTENT_TRUST=1 BUILD_ID=$BITBUCKET_BUILD_NUMBER make
         services:
-          - docker
+          docker:
+            memory: 4096
