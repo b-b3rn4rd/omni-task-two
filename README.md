@@ -1,14 +1,16 @@
 # Test 2
 ## Description
 The following test will require you to do the following:
-* Create a simple application which has a single "/healthcheck" endpoint.
-* Containerise your application as a single deployable artifact, encapsulating all dependencies. Create a CI pipeline for your application
+
+* Create a simple application which has a single `/healthcheck` endpoint.
+* Containerise your application as a single deployable artifact, encapsulating all dependencies. 
+* Create a CI pipeline for your application
 * The application can be written in any programming language. We'd recommend using one the following: NodeJS or GoLang. Please indicate your preferred programming language.
 * The application should be a simple, small, operable web-style API or service provider. 
-* It should implement the following:
-* * An endpoint which returns basic information about your application in JSON format which is generated; 
-* * The following is expected: Applications Version.
-Description. ("static variable") Last Commit SHA.
+* It should implement the following: 
+
+    * An endpoint which returns basic information about your application in JSON format which is generated; 
+    * The following is expected: Applications Version. Description. ("static variable") Last Commit SHA.
 
 ## Implementation
 ### Microservice
