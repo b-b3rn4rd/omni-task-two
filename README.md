@@ -43,8 +43,9 @@ integration test and in theory it should run automation tests. The idea was take
 
 
 In order to organise pipeline workflow, I'm tagging docker images differently depending on a branch.
+
 * If a branch is `master` then the tag format is `major.manor.patch` where `patch` is a build id
-* For all other brancges the tag format is `major.manor.patch-gitsha1` where `patch` is a build id and `gitsha1` is current commit sha1
+* For all other branches the tag format is `major.manor.patch-gitsha1` where `patch` is a build id and `gitsha1` is current commit sha1
 
 **Dockerhub link: https://cloud.docker.com/repository/registry-1.docker.io/bernard/omni-task-two**
 
