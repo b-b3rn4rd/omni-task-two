@@ -1,4 +1,4 @@
-# Test 2
+# Test 2 [![Build Status](https://travis-ci.org/b-b3rn4rd/omni-task-two.svg?branch=master)](https://travis-ci.org/b-b3rn4rd/omni-task-two)
 ## Description
 The following test will require you to do the following:
 
