@@ -1,6 +1,6 @@
 BUILD_ID ?= 1
 BUILD_SHA1 = $(shell git rev-parse --short=7 --verify HEAD)
-BUILD_BRANCH = $(shell git rev-parse --abbrev-ref HEAD)
+BUILD_BRANCH ?= $(shell git rev-parse --abbrev-ref HEAD)
 MAJOR ?= 1
 MINOR ?= 0
 ifeq ($(BUILD_BRANCH),master)
