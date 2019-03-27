@@ -1,4 +1,6 @@
 image: atlassian/default-image:2
+options:
+  size: 2x
 pipelines:
   default:
     - step:
