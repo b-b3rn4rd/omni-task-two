@@ -49,12 +49,9 @@ In order to organise pipeline workflow, I'm tagging docker images differently de
 * If a branch is `master` then the tag format is `major.manor.patch` where `patch` is a build id
 * For all other branches the tag format is `major.manor.patch-gitsha1` where `patch` is a build id and `gitsha1` is current commit sha1
 
-**Dockerhub link: https://cloud.docker.com/repository/registry-1.docker.io/bernard/omni-task-two**
+**Dockerhub link: https://cloud.docker.com/repository/docker/bernard/omni-task-two**
 
 ### Limitations
-**The main limitation at the moment is the absence of `latest` tag. Unfortunately, `docker-compose`
-does not allow to push multiple tags to the dockerhub. The only option is use `docker tag` and tag image explicitly again when the build is on the master.**
- 
 There's a room to extend CI process with additional tools and features such as:
 
 * sonarqube - to store test coverage reports and linting scores
