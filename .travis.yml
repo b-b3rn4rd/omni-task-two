@@ -1,0 +1,7 @@
+sudo: required
+
+services:
+  - docker
+
+script:
+  - DOCKER_CONTENT_TRUST=1 BUILD_ID=$TRAVIS_BUILD_NUMBER make
